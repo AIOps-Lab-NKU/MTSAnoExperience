@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/liangminghan/code/OmniAnomaly/model/variables.dat"
+all_model_checkpoint_paths: "/home/liangminghan/code/OmniAnomaly/model/variables.dat"
