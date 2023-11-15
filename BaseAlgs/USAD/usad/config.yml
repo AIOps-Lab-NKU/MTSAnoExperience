@@ -1,0 +1,103 @@
+# config
+
+# dataset configuration
+dataset: CTF_OmniClusterSelected_th48_26cluster
+x_dims:
+  secure-water-treatment: 51
+  water-distribution: 123
+  server-machine-dataset: 38
+  soil-moisture-active-passive: 25
+  mars-science-laboratory: 55
+  application-server-dataset: 19
+  yidong-22: 22
+  yidong-38: 38
+  CTF_data_533_npy: 49
+  CTF_OmniClusterSelected_th48_26cluster: 49
+  CTF_demo: 49
+
+dataset_paths:
+  secure-water-treatment:
+    train_path: "../Dataset/secure-water-treatment/secure-water-treatment-train.json"
+    test_path: "../Dataset/secure-water-treatment/secure-water-treatment-test.json"
+  water-distribution:
+    train_path: "../Dataset/water-distribution/water-distribution-train.json"
+    test_path: "../Dataset/water-distribution/water-distribution-test.json"
+  server-machine-dataset:
+    train_path: "../Dataset/server-machine-dataset/json-version/server-machine-dataset-train.json"
+    test_path: "../Dataset/server-machine-dataset/json-version/server-machine-dataset-test.json"
+  soil-moisture-active-passive:
+    train_path: "../Dataset/soil-moisture-active-passive/soil-moisture-active-passive-train.json"
+    test_path: "../Dataset/soil-moisture-active-passive/soil-moisture-active-passive-test.json"
+  mars-science-laboratory:
+    train_path: "../Dataset/mars-science-laboratory/mars-science-laboratory-train.json"
+    test_path: "../Dataset/mars-science-laboratory/mars-science-laboratory-test.json"
+  application-server-dataset:
+    train_path: "../Dataset/application-server-dataset/json-version/application-server-dataset-train.json"
+    test_path: "../Dataset/application-server-dataset/json-version/application-server-dataset-test.json"
+  yidong-22:
+    train_path: "../data/yidong-22/yidong-22-train.json"
+    test_path: "../data/yidong-22/yidong-22-test.json"
+  yidong-38:
+    train_path: "../data/yidong-38/yidong-38-train.json"
+    test_path: "../data/yidong-38/yidong-38-test.json"
+  CTF_data_533_npy:
+    train_path: "../data/CTF_data_533_npy/CTF_data_533_npy-train.json"
+    test_path: "../data/CTF_data_533_npy/CTF_data_533_npy-test.json"
+  CTF_demo:
+    train_path: "../data/CTF_demo/CTF_demo-train.json"
+    test_path: "../data/CTF_demo/CTF_demo-test.json"
+  CTF_OmniClusterSelected_th48_26cluster:
+    train_path: "../Dataset/CTF_OmniClusterSelected_th48_26cluster/json-version/CTF_OmniClusterSelected_th48_26cluster-train.json"
+    test_path: "../Dataset/CTF_OmniClusterSelected_th48_26cluster/json-version/CTF_OmniClusterSelected_th48_26cluster-test.json"
+
+
+# model parameters
+max_train_size: None # `None` means full train set
+max_test_size: None
+train_start: 0
+test_start: 0
+max_epochs:
+  secure-water-treatment: 70
+  water-distribution: 70
+  server-machine-dataset: 250
+  soil-moisture-active-passive: 250
+  mars-science-laboratory: 250
+  application-server-dataset: 70
+  # yidong-22: 250
+  yidong-22: 50
+  # yidong-38: 250
+  yidong-38: 50
+  CTF_data_533_npy: 70
+  CTF_OmniClusterSelected_th48_26cluster : 250
+  CTF_demo: 70
+
+# batch_size: 1024
+batch_size: 64
+z_dims: 3
+encoder_nn_size: None # `None` means that nn_size is `(input_dims // 2, input_dims // 4)`
+deocder_nn_size: None
+valid_step_freq: 200
+alpha: 0.5
+beta: 0.5
+window_size:
+  secure-water-treatment: 12
+  water-distribution: 10
+  server-machine-dataset: 5
+  soil-moisture-active-passive: 5
+  mars-science-laboratory: 5
+  application-server-dataset: 100
+  # yidong-22: 5
+  # yidong-38: 5
+  yidong-22: 60
+  yidong-38: 50
+  CTF_data_533_npy: 10
+  CTF_OmniClusterSelected_th48_26cluster : 5
+  CTF_demo: 10
+
+# outputs config
+save_dir: model
+restore_dir: None
+result_dir: result
+train_score_filename: train_score.npy
+test_score_filename: test_score.npy
+threshold_filename: threshold.txt
